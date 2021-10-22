@@ -63,5 +63,14 @@ namespace PierresSweetAndSavory.Controllers
       return RedirectToAction("AddTreat");
     }
 
+    [HttpPost]
+    public ActionResult DeleteTreat(int joinId, int id) 
+    {
+      var joinEntry = _db.TreatFlavors.FirstOrDefault(entry => entry.TreatFlavorsId == joinId);
+      _db.TreatFlavors.Remove(joinEntry);
+      _db.SaveChanges();
+      var model = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
+      return View("Details", model);
+    }
   }
 }

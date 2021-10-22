@@ -43,3 +43,10 @@ a:hover{
 .container{
   margin-top: 250px;
 }
+.card{
+  padding: 20px;
+  background-color: rgb(255, 250, 246);
+}
+thead{
+  background-color: rgb(253, 227, 195);
+}

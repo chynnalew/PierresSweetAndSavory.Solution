@@ -12,14 +12,10 @@
 }
 else 
 {
+  <h3>Flavor Profile:</h3>
   <table class="table table-bordered">
     @foreach(var join in Model.JoinEntities)
     {
-      <thead>
-        <tr>
-            <th>Flavor Profile:</th>
-        </tr>
-      </thead>
       <tr>
         <td style="width:90%">
           @Html.ActionLink($"{join.Flavor.FlavorName}", "Details", "Machines", new{id = join.Flavor.FlavorId})

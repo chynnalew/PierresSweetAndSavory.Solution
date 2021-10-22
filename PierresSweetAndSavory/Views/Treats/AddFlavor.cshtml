@@ -5,7 +5,7 @@
 @model PierresSweetAndSavory.Models.Treat
 
 <div class="card">
-  <h1>@Model.TreatName : Add a Flavor</h1>
+  <h1>@Model.TreatName</h1>
 
   @using (Html.BeginForm())
   {
@@ -19,7 +19,7 @@
   }
 </div>
 <br>
-<h3>Current @Model.TreatName Flavors:</h3>
+<h3>Current @Model.TreatName Flavor Profile:</h3>
   <table class="table table-bordered">
     @foreach(var join in Model.JoinEntities)
     {
