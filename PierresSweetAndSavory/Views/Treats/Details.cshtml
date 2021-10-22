@@ -34,7 +34,10 @@ else
 }
 <br>
 <br>
-<h4 class="h4">@Html.ActionLink("Add a Flavor to this Treat", "AddFlavor", new{id = Model.TreatId})</h4>
-<h4 class="h4">@Html.ActionLink("Edit this Treat", "Edit", new{id = Model.TreatId})</h4>
-<br>
-<h4 class="h4">@Html.ActionLink("Delete this Treat", "Delete", new{id = Model.TreatId})</h4>
+@if(User.Identity.IsAuthenticated)
+{
+  <h4 class="h4">@Html.ActionLink("Add a Flavor to this Treat", "AddFlavor", new{id = Model.TreatId})</h4>
+  <h4 class="h4">@Html.ActionLink("Edit this Treat", "Edit", new{id = Model.TreatId})</h4>
+  <br>
+  <h4 class="h4">@Html.ActionLink("Delete this Treat", "Delete", new{id = Model.TreatId})</h4>
+}

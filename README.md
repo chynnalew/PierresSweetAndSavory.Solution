@@ -22,7 +22,11 @@ Project requirements:
 - Full CRUD implemented for at least one class
 - Many to many relationship viewable from both sides
 - Users can log in and log out with Identity
-- Create, Update, and Destroy are limited to logged in users
+- Create, Update, and Delete are limited to logged in users
+Authentication Features:
+- Anyone can access the index and details views
+- Only authenticated users can access the Create, Update, Delete views
+- The buttons on the navbar, Details and Index pages (for Treats and Flavors) change depending on authentication status
 
 ## Setup and Usage Instructions
 

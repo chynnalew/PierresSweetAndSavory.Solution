@@ -4,7 +4,7 @@
 
 @using System.Security.Claims
 
-<p>@ViewBag.ErrorMesssage</p>
+<p style="color:red">@ViewBag.ErrorMesssage</p>
 @if (User.Identity.IsAuthenticated)
 {
   <h3>Welcome @User.Identity.Name!</h3>

@@ -27,6 +27,9 @@ else
   </div>
 }
 <br>
-<h4 class="h4">@Html.ActionLink("Add a Flavor", "Create", "Flavors")</h4>
-<br>
+@if(User.Identity.IsAuthenticated)
+{
+  <h4 class="h4">@Html.ActionLink("Add a Flavor", "Create", "Flavors")</h4>
+  <br>
+}
 <h4 class="h4">@Html.ActionLink("Return Home", "Index", "Home")</h4>
