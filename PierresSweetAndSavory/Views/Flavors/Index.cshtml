@@ -19,7 +19,7 @@ else
         @foreach(var flavor in Model)
         {
         <tr>
-            <td>@Html.ActionLink($"{flavor.FlavorName}", "Details", "Flavor", new{id = flavor.FlavorId})</td>
+            <td>@Html.ActionLink($"{flavor.FlavorName}", "Details", "Flavors", new{id = flavor.FlavorId})</td>
         </tr>
         }
       </tbody>
