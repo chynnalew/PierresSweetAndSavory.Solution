@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresSweetAndSavory.Models.Flavor;
+
+<h1>Add a Flavor</h1>
+@using(Html.BeginForm())
+{
+  @Html.TextBoxFor(model => model.FlavorName, new{@class = "form-control", placeholder = "Enter the Flavor Here", required = "required"})
+  <br>
+  <input type="submit" value="Add Flavor" class="btn btn-outline-warning"/>
+}
+<br>
+<h4 class="h4">@Html.ActionLink("Return to Flavors", "Index")</h4>
+<br>
+<h4 class="h4">@Html.ActionLink("Return Home", "Index", "Home")</h4>
