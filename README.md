@@ -41,6 +41,7 @@ Project requirements:
   - dotnet add package Pomelo.EntityFrameworkCore.MySql -v 5.0.0-alpha.2
   - dotnet add package Microsoft.EntityFrameworkCore.Proxies -v 5.0.0
   - dotnet tool install --global dotnet-ef --version 3.0.0
+  - dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore -v 5.0.0
 * Create a file named "appsettings.json" in the PierresSweetAndSavory directory
   - add the following code to the appsettings.json file:
   ```
