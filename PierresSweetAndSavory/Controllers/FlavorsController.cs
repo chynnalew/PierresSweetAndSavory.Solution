@@ -42,5 +42,26 @@ namespace PierresSweetAndSavory.Controllers
       return View(model);
     }
 
+    public ActionResult AddTreat(int id)
+    {
+      var model = _db.Flavors
+        .Include(flavor => flavor.JoinEntities)
+        .ThenInclude(join => join.Treat)
+        .FirstOrDefault(flavor => flavor.FlavorId == id);
+      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "TreatName");
+      return View(model);
+    }
+
+    [HttpPost]
+    public ActionResult AddTreat(Flavor flavor, int TreatId)
+    {
+      if(TreatId != 0 && !_db.TreatFlavors.Any(model => model.FlavorId == flavor.FlavorId && model.TreatId == TreatId))
+      {
+        _db.TreatFlavors.Add(new TreatFlavors() {TreatId = TreatId, FlavorId = flavor.FlavorId});
+        _db.SaveChanges();
+      }
+      return RedirectToAction("AddTreat");
+    }
+
   }
 }

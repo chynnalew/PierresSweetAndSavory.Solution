@@ -1,0 +1,43 @@
+@{
+  Layout="_Layout";
+}
+
+@model PierresSweetAndSavory.Models.Flavor
+
+<div class="card">
+  <h1>Add a @Model.FlavorName Treat</h1>
+
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.FlavorId)
+    @Html.Label("Add a Treat")
+    <br>
+    @Html.DropDownList("TreatId")
+    <br>
+    <br>
+    <input type="submit" value="Add this Treat" class="btn btn-outline-warning"/>
+  }
+</div>
+<br>
+<h3>Current @Model.FlavorName Treats:</h3>
+  <table class="table table-bordered">
+    @foreach(var join in Model.JoinEntities)
+    {
+      <tr>
+        <td>
+          @Html.ActionLink($"{join.Treat.TreatName}", "Details", "Treats", new{id = join.Treat.TreatId})
+        </td>
+        <td style="width:10%">
+          @using (Html.BeginForm("DeleteTreat", "Flavors"))
+          {
+            @Html.Hidden("joinId", @join.TreatFlavorsId)
+            @Html.Hidden("id", @Model.FlavorId)
+            <input type="submit" value="Remove Treat"class="btn btn-outline-warning"/>
+          }
+        </td>
+      </tr>
+    }
+  </table>
+
+<br>
+<h4 class="h4">@Html.ActionLink("Return to Flavor", "Details", "Flavor", new{id = @Model.FlavorId})</h4>
