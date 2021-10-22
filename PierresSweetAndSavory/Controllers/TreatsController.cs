@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -7,6 +8,7 @@ using System.Linq;
 
 namespace PierresSweetAndSavory.Controllers
 {
+  [Authorize]
   public class TreatsController : Controller
   {
     private readonly PierresSweetAndSavoryContext _db;
@@ -15,6 +17,8 @@ namespace PierresSweetAndSavory.Controllers
     {
       _db = db;
     }
+
+    [AllowAnonymous]
     public ActionResult Index() 
     { 
       List<Treat> model = _db.Treats.ToList();
@@ -34,6 +38,7 @@ namespace PierresSweetAndSavory.Controllers
       return RedirectToAction("Index");
     }
 
+    [AllowAnonymous]
     public ActionResult Details(int id)
     {
       var model = _db.Treats

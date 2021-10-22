@@ -40,6 +40,7 @@ namespace PierresSweetAndSavory.Controllers
       }
       else
       {
+        ViewBag.ErrorMessage = "Registration Failed.";
         return View();
       }
     }
@@ -59,12 +60,18 @@ namespace PierresSweetAndSavory.Controllers
       }
       else
       {
+        ViewBag.ErrorMessage = "Unable to Login.";
         return View();
       }
     }
 
-    [HttpPost]
-    public async Task<ActionResult> LogOff()
+    public ActionResult LogOff()
+    {
+      return View();
+    }
+
+    [HttpPost, ActionName("LogOff")]
+    public async Task<ActionResult> LogOffConfirm()
     {
       await _signInManager.SignOutAsync();
       return RedirectToAction("Index");

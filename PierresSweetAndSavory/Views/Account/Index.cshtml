@@ -8,6 +8,8 @@
 @if (User.Identity.IsAuthenticated)
 {
   <h3>Welcome @User.Identity.Name!</h3>
+  <p>@Html.ActionLink("Log Out", "LogOff")</p>
+  <p>@Html.ActionLink("Home", "Index", "Home")</p>
 }
 else
 {
