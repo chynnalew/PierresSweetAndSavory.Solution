@@ -11,9 +11,9 @@ namespace PierresSweetAndSavory.Models
     PierresSweetAndSavoryContext IDesignTimeDbContextFactory<PierresSweetAndSavoryContext>.CreateDbContext(string[] args)
     {
       IConfigurationRoot configuration = new ConfigurationBuilder()
-          .SetBasePath(Directory.GetCurrentDirectory())
-          .AddJsonFile("appsettings.json")
-          .Build();
+        .SetBasePath(Directory.GetCurrentDirectory())
+        .AddJsonFile("appsettings.json")
+        .Build();
 
       var builder = new DbContextOptionsBuilder<PierresSweetAndSavoryContext>();
 
