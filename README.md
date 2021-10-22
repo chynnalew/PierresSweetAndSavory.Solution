@@ -55,7 +55,7 @@ Authentication Features:
     "ConnectionStrings": {
         "DefaultConnection": "Server=localhost;Port=3306;database=chynna_lew;uid=root;pwd=[YOUR-PASSWORD-HERE];"
     }
-  }.
+  }
   ```
   - replace [YOUR-PASSWORD-HERE] with your unique MySql password
 * Launch the MySql server:
