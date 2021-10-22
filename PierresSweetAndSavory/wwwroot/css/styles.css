@@ -1,5 +1,20 @@
-body{
+html, body{
   text-align: center;
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(87, 82, 76);
+  font-family: 'Mukta', sans-serif;
+}
+
+.container{
+  margin-top:190px;
+  text-align: center;
+  flex-grow: 1;
+  height:100%;
+  width:100%;
+  background-color: rgb(252, 252, 252);
+  padding:30px;
 }
 
 .header{
@@ -7,12 +22,14 @@ body{
   position: fixed;
   padding: 50px;
   top:0;
-  background-image: url(../img/atBackground.jpeg);
+  background-image: url(../img/Background.jpeg);
   background-size: cover;
-  background-color: rgba(228, 198, 142, 0.479);
+  background-color: rgba(255, 230, 181, 0.26);
   background-blend-mode: lighten;
   text-align: center;
-  text-shadow: 0px 0px 19px white;
+  text-shadow: 0px 0px 50px rgb(255, 227, 166), 0px 0px 30px white, 0px 0px 20px white;
+  font-family: 'Courgette', cursive;
+  font-weight: bolder;
 }
 .fixedHeader{
   width: 100%;
@@ -23,7 +40,7 @@ body{
   text-align: center;
 
   border-top: 2px rgb(121, 68, 0) solid;
-  border-bottom: 2px rgb(255, 255, 255) solid;
+  border-bottom: 2px rgb(54, 51, 50) solid;
 }
 .fixedHeader a{
   color: rgb(95, 46, 0);
@@ -40,13 +57,33 @@ a:hover{
   text-decoration: none;
   text-shadow: 0px 0px 5px rgb(255, 235, 192);
 }
-.container{
-  margin-top: 250px;
-}
 .card{
   padding: 20px;
   background-color: rgb(255, 250, 246);
 }
 thead{
   background-color: rgb(253, 227, 195);
+}
+
+.h4{
+  display: inline-block;
+  padding:10px;
+  width:30%;
+  border:2px solid rgb(121, 68, 0);
+  background-color:rgb(236, 195, 147);
+  border-radius: 5px;
+}
+.h4:hover{
+  background-color: antiquewhite;
+}
+.h4 a{
+  color: rgb(51, 36, 18);
+}
+.h4 a:hover{
+  text-shadow: 0px 0px 20px rgb(235, 195, 144);
+}
+.btn-outline-warning{
+  color: rgb(134, 90, 40);
+  background-color: rgb(240, 230, 216);
+  outline-color: rgb(92, 62, 28);
 }
