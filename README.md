@@ -18,11 +18,13 @@
 ## Description
 
 This project was created for Epicodus bootcamp to show proficiency in Authentication with Identity. This application is for a bakery, allowing the user to log different treats and their flavors. The user must login to manipulate many to many relationships between treats and flavors.
+
 Project requirements:
 - Full CRUD implemented for at least one class
 - Many to many relationship viewable from both sides
 - Users can log in and log out with Identity
 - Create, Update, and Delete are limited to logged in users
+
 Authentication Features:
 - Anyone can access the index and details views
 - Only authenticated users can access the Create, Update, Delete views

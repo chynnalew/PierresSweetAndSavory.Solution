@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PierresSweetAndSavory.Models;
-using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 
 namespace PierresSweetAndSavory.Controllers
@@ -17,7 +17,9 @@ namespace PierresSweetAndSavory.Controllers
     [HttpGet("/")]
     public ActionResult Index() 
     { 
-      List<Treat> model = _db.Treats.ToList();
+      dynamic model = new ExpandoObject();
+      model.Treat = _db.Treats.ToList();
+      model.Flavor = _db.Flavors.ToList();
       return View(model); 
     }
   }
