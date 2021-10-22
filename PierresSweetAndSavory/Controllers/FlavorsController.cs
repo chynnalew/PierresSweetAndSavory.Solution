@@ -86,5 +86,20 @@ namespace PierresSweetAndSavory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult Delete(int id)
+    {
+      var model = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
+      return View(model);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var model = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id );
+      _db.Flavors.Remove(model);
+      _db.SaveChanges();
+      return RedirectToAction("Index");  
+    }
   }
 }
