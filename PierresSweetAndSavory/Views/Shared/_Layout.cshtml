@@ -1,21 +1,33 @@
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>My To-Do List!</title>
+    <title>Pierre's</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
+    <div class="header">
+      <h1>Pierre's Sweet and Savory Treats</h1>
+    </div>
+    <div class="fixedHeader">
+      @Html.ActionLink("Home", "Index", "Home")
+      @Html.ActionLink("Treats", "Index", "Treats")
+      @Html.ActionLink("Flavors", "Index", "Flavors")
+      @if(!User.Identity.IsAuthenticated)
+      {
+        @Html.ActionLink("Login", "Index", "Account")
+      }
+      @if(User.Identity.IsAuthenticated)
+      {
+        @Html.ActionLink("Log Out", "LogOff", "Account")
+
+      }
+    </div>
     <div class="container">
-    @RenderBody()
-  </div>
+      @RenderBody()
+    </div>
   </body>
 </html>
-
-@* add: 
-@{
-  Layout = "_Layout";
-}
-to the beginning of each cshtml *@
 
